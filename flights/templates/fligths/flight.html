@@ -1,0 +1,21 @@
+{% extends 'fligths/layout.html' %}
+{% block content %}
+<h1>{{fligth.id}}</h1>
+<ul>
+    <li>Origin : {{fligth.origin}}</li>
+    <li>Destination :{{fligth.destination}}</li>
+    <li> Duration : {{fligth.duration}}</li>
+</ul>
+<h2>Passengers</h2>
+
+{% for passenger in passengers  %}
+<li>{{passenger}}</li>
+{% empty %}
+<li>No Passengers</li>
+    
+{% endfor %}
+<a href="{% url 'index' %}">Back To fligth list</a>
+
+    
+
+{% endblock content %}
