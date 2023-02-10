@@ -7,14 +7,30 @@
     <li> Duration : {{fligth.duration}}</li>
 </ul>
 <h2>Passengers</h2>
-
+<ul>
 {% for passenger in passengers  %}
 <li>{{passenger}}</li>
 {% empty %}
 <li>No Passengers</li>
     
 {% endfor %}
-<a href="{% url 'index' %}">Back To fligth list</a>
+</ul>
+<h2>Add passenger</h2>
+<form action="{% url 'book' fligth.id %}" method="post">
+ {% csrf_token %}
+ <select name="passenger" id="">
+    
+    {% for passenger  in non_passengers %}
+    <option value="{{passenger.id}}">{{passenger}}</option>
+        
+    {% endfor %}
+        
+ </select>
+ <input type="submit">
+
+
+</form>
+<a href="{% url 'index' %}">Back To fligths list</a>
 
     
 
