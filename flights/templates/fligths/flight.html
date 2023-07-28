@@ -16,7 +16,7 @@
 {% endfor %}
 </ul>
 <h2>Add passenger</h2>
-<form action="{% url 'book' fligth.id %}" method="post">
+<form action="{% url 'flights:book' fligth.id %}" method="post">
  {% csrf_token %}
  <select name="passenger" id="">
     
@@ -30,7 +30,7 @@
 
 
 </form>
-<a href="{% url 'index' %}">Back To fligths list</a>
+<a href="{% url 'flights:index' %}">Back To fligths list</a>
 
     
 

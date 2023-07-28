@@ -8,13 +8,14 @@
 {% endif %}
     
 
-<form action="{% url 'login' %}" method="post">
+<form action="{% url 'users:login' %}" method="post">
     {% csrf_token %}
 
-    <input type="text" name="username" placeholder="UserName">
-    <input type="password" name="password" placeholder="Password">
+    <input type="text" name="name" placeholder="UserName">
+    <input type="password" name="password1" placeholder="Password">
     <input type="submit" value="Login">
 </form>
+<a href="{% url 'users:sign_up'  %} ">Sign Up</a>
 
 
 {% endblock body %}
